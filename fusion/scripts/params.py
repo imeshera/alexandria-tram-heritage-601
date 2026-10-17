@@ -1,0 +1,73 @@
+# Parameter sheet for "Alexandria Heritage Tram 601" (Raml heritage four-axle wooden motor car, double-ended).
+# Frame: X along the car from end A (dash centre) to end B, Y up from top of rail, Z lateral (+z = left side seen
+# from end A). The car is symmetric end-to-end (open entrance platforms at all four corners).
+# Confidence: S sourced, S? generic/analog, V photo-measured (references/notes/car601-dimensions.md), E estimate.
+# Main photo: transphoto 1920902 broadside (2024), scale 11.25 mm/px +/- 7 % (tower deck 4.5 m + wheel 0.83 m).
+PARAMS = [
+    ('car_len', '13240 mm', 'mm', 'Length over dashes (centre of the bowed ends), V: broadside 1177 px (LOW-MED, +/-7 % scale)'),
+    ('body_w', '2400 mm', 'mm', 'Body width at the waist, V: head-on width/dash ratio 2.68-2.72 (tp 2110423, 1915990) (LOW-MED)'),
+    ('half_w', 'body_w / 2', 'mm', 'Derived'),
+    ('plat_len', '1260 mm', 'mm', 'Dash centre to saloon outer end post (platform), V: broadside 1.26 m'),
+    ('bow_c', '980 mm', 'mm', 'End plan: width of the centre facet (big front window), V: head-on post spacing'),
+    ('bow_m', '500 mm', 'mm', 'End plan: length of each intermediate facet, V/E'),
+    ('bow_m_ang', '14 deg', 'deg', 'End plan: intermediate facet angle to the end plane, E (foreshortening 45-68 px)'),
+    ('bow_k_ang', '45 deg', 'deg', 'End plan: corner facet angle, E (broadside corner depth ~0.27 m)'),
+    ('ent_x0', '400 mm', 'mm', 'Entrance opening start (behind the corner post), V: broadside 0.34-0.40'),
+    ('ent_x1', '1200 mm', 'mm', 'Entrance opening end (saloon end post), V: broadside 1.26 less post'),
+    ('post_w', '180 mm', 'mm', 'Saloon end corner post width, V: broadside 16 px'),
+    # heights
+    ('solebar_bot', '620 mm', 'mm', 'Solebar bottom, V: broadside'),
+    ('floor_h', '870 mm', 'mm', 'Saloon / platform floor above rail, V: broadside platform floor 0.87'),
+    ('body_bot', '850 mm', 'mm', 'Bottom of the side body (bottom rail bottom), V: 0.85'),
+    ('rail_bot_h', '90 mm', 'mm', 'Bottom rail (cream) height, V: 0.85-0.94'),
+    ('waist_h', '1750 mm', 'mm', 'Top of the lower panels / bottom of the waist rail, V: 1.75'),
+    ('sill_h', '1840 mm', 'mm', 'Window sill / glass bottom (top of waist rail), V: 1.84'),
+    ('win_top', '2810 mm', 'mm', 'Side window head (arch crown), V: 2.81'),
+    ('arch_rise', '70 mm', 'mm', 'Segmental arch rise of the side window heads, V: ~6 px'),
+    ('eave_h', '2940 mm', 'mm', 'Underside of the roof cornice (eave board bottom), V: 2.94'),
+    ('cornice_top', '3120 mm', 'mm', 'Top of the roof cornice / roof edge, V: 3.12'),
+    ('crown_h', '3290 mm', 'mm', 'Roof crown, V: 3.29 (+/-0.2 with scale)'),
+    ('roof_ovh', '60 mm', 'mm', 'Roof cornice overhang past the body side and the ends, V/E'),
+    ('wall_t', '40 mm', 'mm', 'Body side / end wall thickness (wood on ash frame), E'),
+    # side windows (11 big + 1 narrow at each end, broadside)
+    ('win_pitch', '874 mm', 'mm', 'Side window pitch, V: 77.7 px (10 bays)'),
+    ('win_w', '690 mm', 'mm', 'Big side window width, V: 61 px'),
+    ('nwin_x', '1430 mm', 'mm', 'Narrow end window start, V: 1.43'),
+    ('nwin_w', '340 mm', 'mm', 'Narrow end window width, V: 30 px'),
+    ('n_win', '11', '', 'Big side windows per side, V: broadside count'),
+    ('win1_x', '(car_len - (n_win - 1) * win_pitch - win_w) / 2', 'mm', 'First big window start (window grid centred on the car), V: 1.94 measured'),
+    # front
+    ('fwin_bot', '1860 mm', 'mm', 'Front window glass bottom, V: head-on'),
+    ('fwin_top', '2760 mm', 'mm', 'Front window glass top, V: head-on (7.95 mm/px)'),
+    ('fwin_c_w', '850 mm', 'mm', 'Front big centre window width, V: 107 px'),
+    ('hl_y', '1300 mm', 'mm', 'Headlight centre height (centre facet), V: head-on'),
+    ('hl_d', '280 mm', 'mm', 'Headlight chrome ring diameter, V: 35 px'),
+    ('apron_bot', '300 mm', 'mm', 'Apron / fender bottom at the ends, V: head-on 0.27-0.35'),
+    ('apron_out', '110 mm', 'mm', 'Apron projection beyond the dash, V: broadside nose 22 vs 60 px (0.4 m incl. bow) (LOW)'),
+    ('board_bot', '2940 mm', 'mm', 'Destination board bottom (on the roof-end hood), V'),
+    ('board_h', '270 mm', 'mm', 'Destination board height, V: 2012 / 2025 fronts'),
+    ('route_w', '300 mm', 'mm', 'Route-number box width (centre of the board), V: 36 px'),
+    ('step1_h', '720 mm', 'mm', 'Upper entrance step, V: broadside'),
+    ('step2_h', '470 mm', 'mm', 'Lower entrance step, V: broadside'),
+    # running gear
+    ('bogie_a_x', '2640 mm', 'mm', 'Bogie A centre, V: broadside axleboxes 1.91/3.38'),
+    ('bogie_b_x', 'car_len - bogie_a_x', 'mm', 'Bogie B centre (symmetric), V: broadside 10.69'),
+    ('bogie_wb', '1520 mm', 'mm', 'Bogie wheelbase, V: 130-140 px'),
+    ('wheel_d', '830 mm', 'mm', 'Wheel diameter, V: rim radius ~37 px; typical 1920s 800-860 (S?)'),
+    ('gauge', '1435 mm', 'mm', 'Track gauge, S'),
+    ('back_to_back', '1360 mm', 'mm', 'Wheel back-to-back, standard-gauge tram'),
+    ('tread_w', '110 mm', 'mm', 'Wheel tread width, E'),
+    # roof equipment
+    ('tower_a_x', '3030 mm', 'mm', 'Pantograph tower A centre, V: broadside legs 1.88-4.18'),
+    ('tower_b_x', '9990 mm', 'mm', 'Pantograph tower B centre, V: broadside legs 8.63-11.42 (asymmetric, as photographed)'),
+    ('tower_foot_l', '2300 mm', 'mm', 'Tower footprint length along the car, V: 2.31'),
+    ('tower_foot_w', '1900 mm', 'mm', 'Tower footprint width (legs on the cornice), V: head-on'),
+    ('tower_deck_l', '1780 mm', 'mm', 'Tower deck length, V: 1.78'),
+    ('tower_deck_w', '1350 mm', 'mm', 'Tower deck width, V: head-on'),
+    ('tower_h', '4470 mm', 'mm', 'Tower deck height above rail, V: 4.47 (= scale anchor, Kinki SD deck 4.5 +/-0.2)'),
+    ('panto_a_up', '1400 mm', 'mm', 'Pantograph A height above its folded position (raised to the wire, 2024 broadside: head ~5.9 m), V'),
+    ('panto_b_up', '0 mm', 'mm', 'Pantograph B height above folded (0 = folded down, 2024 broadside), E'),
+    # switches
+    ('livery', '1', '', '1 light blue / cream, c. 2007-2019 (default); 2 red / cream after the 2020 restoration; 3 yellow works car, 2002'),
+    ('car_no', '601', '', 'Fleet number'),
+]
